@@ -22,6 +22,7 @@
 */
 
 #define NCURSES_WIDECHAR 1
+#define COLOR_PINK 8
 
 #include <errno.h>
 #include <stdio.h>
@@ -241,9 +242,8 @@ void var_init() {
     }
 
     /* Init Trans flag colors, RGB/256=value */
-    /* Consider making these proper custom color values instead of hacks */
-    init_color(COLOR_BLUE, 187, 847, 929);
-	init_color(COLOR_RED, 925, 648, 695);
+    init_color(COLOR_CYAN, 187, 847, 929);
+	init_color(COLOR_PINK, 925, 648, 695);
 
 }
 
@@ -511,6 +511,7 @@ if (console) {
             init_pair(COLOR_MAGENTA, COLOR_MAGENTA, -1);
             init_pair(COLOR_BLUE, COLOR_BLUE, -1);
             init_pair(COLOR_YELLOW, COLOR_YELLOW, -1);
+            init_pair(COLOR_PINK, COLOR_PINK, -1);
         } else {
 #else
         { /* Hack to deal the after effects of else in HAVE_USE_DEFAULT_COLOURS */
@@ -523,6 +524,7 @@ if (console) {
             init_pair(COLOR_MAGENTA, COLOR_MAGENTA, COLOR_BLACK);
             init_pair(COLOR_BLUE, COLOR_BLUE, COLOR_BLACK);
             init_pair(COLOR_YELLOW, COLOR_YELLOW, COLOR_BLACK);
+            init_pair(COLOR_PINK, COLOR_PINK, COLOR_BLACK);
         }
     }
 
@@ -803,10 +805,10 @@ if (console) {
 
                         switch (randomColor) {
                             case 0:
-                                mcolor = COLOR_BLUE;
+                                mcolor = COLOR_CYAN;
                                 break;
                             case 1:
-                                mcolor = COLOR_RED;
+                                mcolor = COLOR_PINK;
                                 break;
                             case 2:
                                 mcolor = COLOR_WHITE;
