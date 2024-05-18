@@ -244,6 +244,7 @@ void var_init() {
     /* Init Trans flag colors, RGB/256=value */
     init_color(COLOR_CYAN, 187, 847, 929);
 	init_color(COLOR_PINK, 925, 648, 695);
+	init_color(COLOR_WHITE, 1000, 1000, 1000);
 
 }
 
